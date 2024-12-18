@@ -1,0 +1,43 @@
+---
+title: "Introduction to ggplot2 in R"
+author: "Amir Golzan"
+date: "2024-12-18"
+format: html
+---
+
+# Introduction
+
+`ggplot2` is a powerful and versatile data visualization package in R that allows you to create high-quality graphs and plots with ease. This tutorial will guide you through the basics and some advanced techniques to harness its capabilities.
+
+![Alt Text](/Users/amirgolzan/GitHub/WebPageTest/_src/course_image.png)
+
+---
+
+# Basics of ggplot2
+
+## Importing Required Libraries
+
+```{r}
+library(ggplot2)
+
+# Here’s how to create a simple scatter plot using the mpg dataset:
+
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+  geom_point()
+
+# Enhance your plots with themes:
+
+ggplot(data = mpg, aes(x = displ, y = hwy, color = class)) +
+  geom_point(size = 3) +
+  theme_minimal() +
+  labs(title = "Fuel Efficiency by Engine Size",
+       x = "Engine Displacement (L)",
+       y = "Highway Miles per Gallon")
+
+# You can also divide the plot by a categorical variable:
+
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  facet_wrap(~ class)
+
+# By now, you should have a foundational understanding of ggplot2. Start experimenting with your own datasets and unlock the power of data visualization!
